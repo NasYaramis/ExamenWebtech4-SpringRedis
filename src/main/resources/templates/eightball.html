@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+     <title>Eightball: Ask Any Question</title>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+     <h1>Eightball Question Form</h1>
+    <form action="/eightball" method="POST" id="form1">
+    <p>Question: <input type="text" th:value="*{question}" th:name="question"></p>
+    <p>Answer: <type="text" th:text="*{answer}" /></p>
+    </form>
+    <button type="submit" form="form1" value="Submit">Submit</button>
+</body>
+</html>
