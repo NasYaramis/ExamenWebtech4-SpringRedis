@@ -1,5 +1,7 @@
 package edu.ap.be.eightball.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,6 +43,12 @@ public class EightballController {
             return "eightball";
         } else {
             String answer = eightball.getAnswer();
+
+            List<String> answers;
+            answers = eightball.getAnswers();
+            answers.remove(answer);
+            eightball.setAnswers(answers);
+
             model.addAttribute("question", question);
             model.addAttribute("answer", answer);
 
